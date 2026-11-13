@@ -1,0 +1,9 @@
+bin/
+out/
+fuentes.txt
+*.class
+.idea/
+*.iml
+.vscode/
+nbproject/private/
+.DS_Store

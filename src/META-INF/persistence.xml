@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Datos de conexion de Food Store.
+  Se usan los nombres de propiedad estandar de Jakarta Persistence, aunque el
+  proyecto NO usa JPA: el archivo se lee con el parser DOM del JDK (ConexionDB).
+
+  Unidad activa: la primera del archivo, salvo que se indique otra al ejecutar:
+      java -Dfoodstore.pu=foodstorePU-h2 -cp "bin:lib/*" integrado.prog2.Main
+-->
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.0">
+
+    <!-- MySQL 8: motor elegido (es el mismo que se usa en Bases de Datos I) -->
+    <persistence-unit name="foodstorePU-mysql">
+        <properties>
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="jakarta.persistence.jdbc.url"
+                      value="jdbc:mysql://localhost:3306/foodstore?serverTimezone=America/Argentina/Buenos_Aires&amp;allowPublicKeyRetrieval=true&amp;useSSL=false"/>
+            <property name="jakarta.persistence.jdbc.user" value="foodstore"/>
+            <property name="jakarta.persistence.jdbc.password" value="foodstore"/>
+        </properties>
+    </persistence-unit>
+
+</persistence>
