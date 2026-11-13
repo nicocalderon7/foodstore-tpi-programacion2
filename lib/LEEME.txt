@@ -1,8 +1,0 @@
-Coloque en esta carpeta el driver JDBC de MySQL:
-
-    mysql-connector-j-9.x.x.jar   (MySQL Connector/J, version 8.0 o superior)
-
-Descarga: https://dev.mysql.com/downloads/connector/j/
-  -> Elegir "Platform Independent", bajar el .zip y copiar el .jar que trae adentro.
-
-El programa lo incorpora al classpath con:  java -cp "bin:lib/*" integrado.prog2.Main
