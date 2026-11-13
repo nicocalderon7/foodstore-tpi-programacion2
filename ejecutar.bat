@@ -1,20 +1,17 @@
 @echo off
 REM Compila y ejecuta Food Store en Windows (sin Maven ni Gradle).
+REM Usa rutas relativas para funcionar aunque la carpeta tenga espacios o acentos.
 cd /d "%~dp0"
-chcp 65001 > nul
 
-if not exist lib\*.jar echo [!] No hay ningun driver JDBC en lib\. Descargue mysql-connector-j-X.Y.Z.jar y copielo en lib\.
+if not exist lib\*.jar echo [!] No hay ningun driver JDBC en lib\. Copie el .jar de mysql-connector-j en lib\.
 
 if exist bin rmdir /s /q bin
-dir /s /b src\*.java > fuentes.txt
-javac -encoding UTF-8 -d bin @fuentes.txt
+javac -encoding UTF-8 -sourcepath src -d bin src\integrado\prog2\Main.java
 if errorlevel 1 (
-    del fuentes.txt
+    echo [ERROR] No se pudo compilar el proyecto.
     pause
     exit /b 1
 )
-del fuentes.txt
 xcopy /e /i /q src\META-INF bin\META-INF > nul
-REM En Windows el separador del classpath es punto y coma
-java -cp "bin;lib/*" integrado.prog2.Main
+java -cp "bin;lib\*" integrado.prog2.Main
 pause

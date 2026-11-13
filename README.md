@@ -75,7 +75,7 @@ Para cambiar de servidor, puerto o credenciales se edita solo este archivo. La o
 **Linux / macOS** (o el script `./ejecutar.sh`):
 
 ```bash
-javac -encoding UTF-8 -d bin $(find src -name "*.java")
+javac -encoding UTF-8 -sourcepath src -d bin src/integrado/prog2/Main.java
 cp -r src/META-INF bin/META-INF
 java -cp "bin:lib/*" integrado.prog2.Main
 ```
@@ -83,13 +83,13 @@ java -cp "bin:lib/*" integrado.prog2.Main
 **Windows** (o doble clic en `ejecutar.bat`):
 
 ```bat
-dir /s /b src\*.java > fuentes.txt
-javac -encoding UTF-8 -d bin @fuentes.txt
+javac -encoding UTF-8 -sourcepath src -d bin src\integrado\prog2\Main.java
 xcopy /e /i src\META-INF bin\META-INF
-java -cp "bin;lib/*" integrado.prog2.Main
+java -cp "bin;lib\*" integrado.prog2.Main
 ```
 
 > En Windows el separador del classpath es `;`. En Linux y macOS es `:`.
+> Con `-sourcepath src`, `javac` compila `Main` y todas las clases que usa (el proyecto completo) y funciona aunque la ruta de la carpeta tenga espacios o acentos.
 
 **Desde un IDE (IntelliJ / NetBeans / Eclipse):** abrir la carpeta como proyecto Java sin build tool, marcar `src` como carpeta de fuentes, agregar el `.jar` de `lib/` como librería y ejecutar `integrado.prog2.Main`.
 

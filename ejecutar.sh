@@ -8,6 +8,6 @@ if ! ls lib/*.jar >/dev/null 2>&1; then
 fi
 
 rm -rf bin
-javac -encoding UTF-8 -d bin $(find src -name "*.java")
+javac -encoding UTF-8 -sourcepath src -d bin src/integrado/prog2/Main.java
 cp -r src/META-INF bin/META-INF
 java -cp "bin:lib/*" integrado.prog2.Main
