@@ -15,8 +15,8 @@ Aplicación de consola en **Java 21** para gestionar categorías, productos, usu
 Los usuarios y pedidos **se pierden al cerrar el programa**. Las categorías y productos **quedan guardados**.
 
 - **Integrantes:** Calderon Nicolas
-- **Video demostrativo:** 
-- **Documentación (PDF):** 
+- **Video demostrativo:** https://drive.google.com/file/d/1iNFDMB0RBVqdYj2g5jCf7cTn_gSWUxtF/view?usp=drive_link
+
 
 ---
 
